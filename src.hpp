@@ -106,6 +106,7 @@ void Calculate(std::vector<Matrix *> keys, std::vector<Matrix *> values,
     gpu_sim.MoveMatrixToGpuHbm(answer_sram);
     gpu_sim.Run(false, &matrix_memory_allocator);
     rater.CommitAnswer(*answer_sram);
+
     std::cerr << "=== Query " << q_idx << " committed ===" << std::endl;
   }
 }
